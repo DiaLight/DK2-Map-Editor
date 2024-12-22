@@ -175,6 +175,8 @@ target_link_libraries(Editor
         Comctl32 Shlwapi Winmm
 )
 add_dependencies(Editor CameraPaths)
+set_property(TARGET Editor PROPERTY
+        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 set_target_properties(Editor
         PROPERTIES
         ARCHIVE_OUTPUT_DIRECTORY "${EDITOR_BINARIES_DIR}"
